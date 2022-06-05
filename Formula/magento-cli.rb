@@ -5,21 +5,21 @@
 class MagentoCli < Formula
   desc "tool for managing magento and serving local versions"
   homepage "https://superterran.net/magento-cli/"
-  version "0.1.1"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/superterran/magento-cli/releases/download/v0.1.1/magento-cli_0.1.1_darwin_amd64.tar.gz"
-      sha256 "1248d7313723d931aed8fb719e5e6c6f464becbb3454c4bc79caa5038ca487df"
+    if Hardware::CPU.arm?
+      url "https://github.com/superterran/magento-cli/releases/download/v0.1.3/magento-cli_0.1.3_darwin_arm64.tar.gz"
+      sha256 "134d35b207485e5214f5330d36bcc03c18f277d4ca1bd1bc9d2f64bcc3e5b0c5"
 
       def install
         bin.install "magento"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/superterran/magento-cli/releases/download/v0.1.1/magento-cli_0.1.1_darwin_arm64.tar.gz"
-      sha256 "cf93d70c152dd5dd687f2ff094af71c06afd230cfe4a65c35fdafa6862d49617"
+    if Hardware::CPU.intel?
+      url "https://github.com/superterran/magento-cli/releases/download/v0.1.3/magento-cli_0.1.3_darwin_amd64.tar.gz"
+      sha256 "83e4f67d1169293510aa8a55a2435d47b88ce8ede87aa19b78e670f2f5c15460"
 
       def install
         bin.install "magento"
@@ -28,17 +28,17 @@ class MagentoCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/superterran/magento-cli/releases/download/v0.1.1/magento-cli_0.1.1_linux_arm64.tar.gz"
-      sha256 "8669e3efb814a0c3fb41511e309cbea593e128fc063c86fcbd93ca868247b04a"
+    if Hardware::CPU.intel?
+      url "https://github.com/superterran/magento-cli/releases/download/v0.1.3/magento-cli_0.1.3_linux_amd64.tar.gz"
+      sha256 "04eb42ab30a0b5255dcd6303e417aaec1edef5ded1f9ad956d24187f4a3ccdff"
 
       def install
         bin.install "magento"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/superterran/magento-cli/releases/download/v0.1.1/magento-cli_0.1.1_linux_amd64.tar.gz"
-      sha256 "cd3182e5e37cc93205355d17d32d1a8d12146590a4d3af63662fbd19c6f36ee3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/superterran/magento-cli/releases/download/v0.1.3/magento-cli_0.1.3_linux_arm64.tar.gz"
+      sha256 "ec24c90fb127a7e7b4a23a748652da52b1b90efa4b5c83f8218584f11d3c47e0"
 
       def install
         bin.install "magento"
