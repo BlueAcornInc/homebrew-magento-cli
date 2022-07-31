@@ -5,21 +5,21 @@
 class MagentoCli < Formula
   desc "run magento natively with dockerized backend services"
   homepage "https://magento-cli.com"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.6/magento-cli_0.1.6_darwin_arm64.tar.gz"
-      sha256 "35790973b8380d4016242e77b2f3ec0ab3e070854664bc875c462dcc18171e78"
+    if Hardware::CPU.intel?
+      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.7/magento-cli_0.1.7_darwin_amd64.tar.gz"
+      sha256 "6d1bd15238c5091b58f7395706a344cc4048f8972f25eaa57aca3f6e5b5e2941"
 
       def install
         bin.install "magento"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.6/magento-cli_0.1.6_darwin_amd64.tar.gz"
-      sha256 "75e97493df2119e8c4d39c45f024edc3619fde3fb4aff2fcff7811f4e8d31c80"
+    if Hardware::CPU.arm?
+      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.7/magento-cli_0.1.7_darwin_arm64.tar.gz"
+      sha256 "63706edea9c6e384a69f5286996f59fdb10b9b71c08c3eb6ad4cde95a63127d9"
 
       def install
         bin.install "magento"
@@ -29,16 +29,16 @@ class MagentoCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.6/magento-cli_0.1.6_linux_amd64.tar.gz"
-      sha256 "4c8364d45672d1fad7c7082d145d401d3fefcea9884bd3671fb653a0c76ac934"
+      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.7/magento-cli_0.1.7_linux_amd64.tar.gz"
+      sha256 "763a713ce8b1bf4a2db479002a1bbba33146d21c5a35bb31148a80aba2c74a32"
 
       def install
         bin.install "magento"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.6/magento-cli_0.1.6_linux_arm64.tar.gz"
-      sha256 "0438baa3b8229eea7cf7c173c7135fb142ec967c12a30b34ecf85cc1793a3e82"
+      url "https://github.com/blueacorninc/magento-cli/releases/download/v0.1.7/magento-cli_0.1.7_linux_arm64.tar.gz"
+      sha256 "968775c067a86a0857d9e2476cae2d0b106dcfe303337bea1b47788b412a7b7c"
 
       def install
         bin.install "magento"
